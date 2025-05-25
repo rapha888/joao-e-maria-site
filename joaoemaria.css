@@ -1,0 +1,316 @@
+/* Resetando algumas configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globais */
+body {
+    font-family: 'Sacramento', cursive, sans-serif; /* Fonte mais doce */
+    background: linear-gradient(135deg, #FAD0C4, #F8C0C8);
+    background-size: 400% 400%;
+    animation: gradientAnimation 12s ease infinite;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 100px;
+}
+
+/* Animação de fundo */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #FFCECE;
+    color: white;
+    padding: 10px 20px;  /* Ajustando o padding para dar menos altura */
+    border-bottom: 4px solid #FF9C99;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Flexbox para garantir que os itens fiquem lado a lado */
+    justify-content: space-between; /* Distribui os itens igualmente */
+    gap: 20px; /* Espaçamento entre os itens */
+    padding-left: 0;
+    flex-wrap: wrap; /* Garante que os itens não quebrem */
+    width: 100%; /* Garante que os itens ocupem a largura total */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap; /* Garante que o texto não quebre nas palavras */
+}
+
+nav ul li a:hover {
+    color: #FF9C99;
+}
+
+/* Banner */
+.banner {
+    background-image: url('imagem-banner.jpg'); /* Certifique-se de usar uma imagem de confeitaria */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    background-color: #F9E1D2; /* Tom doce */
+}
+
+.banner h1 {
+    font-size: 3.5em;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 10px;
+    color: #FF6F61; /* Rosa intenso */
+}
+
+.banner p {
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    color: #6E47D1; /* Lavanda */
+}
+
+.cta-button {
+    background-color: #FF9C99; /* Rosa suave */
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF6F61; /* Cor mais intensa */
+}
+
+/* Seções gerais */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    font-size: 2.5em;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 30px;
+    color: #FF9C99;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #6E47D1;
+}
+
+/* Cardápio */
+.produtos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.produto {
+    background-color: #FFF;
+    border: 1px solid #E6E6E6;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-10px);
+}
+
+.produto h3 {
+    font-size: 1.6em;
+    font-family: 'Pacifico', cursive;
+    color: #FF6F61;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-size: 1.1em;
+    color: #4C8B8C;
+}
+
+/* Encomendas */
+#encomendas {
+    background-color: #D3FFB0; /* Verde menta */
+}
+
+#encomendas a {
+    font-size: 1.2em;
+    color: #B8A1FF;
+    text-decoration: none;
+    border: 2px solid #B8A1FF;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#encomendas a:hover {
+    background-color: #B8A1FF;
+    color: white;
+}
+
+/* Contato */
+#contato a {
+    font-size: 1.2em;
+    color: #6E47D1;
+    text-decoration: none;
+    border: 2px solid #6E47D1;
+    padding: 12px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#contato a:hover {
+    background-color: #6E47D1;
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Imagens de João e Maria (bonecos) */
+.boneco {
+    width: 120px;
+    height: auto;
+    margin: 0 10px;
+    border-radius: 50%; /* Deixa a imagem completamente arredondada */
+    object-fit: cover; /* Garante que a imagem preencha o espaço de forma proporcional */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* (opcional) sombra para dar destaque */
+}
+
+
+/* Media Query para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajustando o header */
+    .indicador-contato {
+        bottom: 30px; /* Ajustei a distância do botão em relação ao fundo */
+        right: 15px;  /* Ajustei a distância do botão em relação à borda direita */
+        padding: 6px 12px; /* Reduzi o padding para celulares */
+        gap: 6px; /* Menos espaçamento entre o ícone e o texto */
+    }
+    nav ul {
+        flex-direction: row; /* Mantém os itens lado a lado */
+        justify-content: space-evenly; /* Espaço igual entre os itens */
+        width: 100%; /* Garante que ocupe toda a largura */
+        margin-top: 20px;
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Ajuste para diminuir a margem entre os itens */
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Ajusta o tamanho da fonte para dispositivos menores */
+    }
+
+    /* Ajustando o layout do cardápio */
+    .produtos {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .produto {
+        width: 80%;
+    }
+
+    /* Ajustando o layout das seções */
+    section {
+        padding: 40px 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    /* Ajustando os botões */
+    .cta-button {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+}
+
+/* --- aqui começa o NOVO indicador de contato --- */
+.indicador-contato {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    background-color: #fff0f5;
+    color: #ff6f61;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.2em;
+    animation: piscar 10s infinite;
+}
+
+.indicador-contato .icone-bolo {
+    width: 30px;
+    height: 30px;
+}
+
+.indicador-contato .seta {
+    width: 0; 
+    height: 0; 
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 15px solid #ff6f61;
+}
+
+@keyframes piscar {
+    0%, 80%, 100% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+}
