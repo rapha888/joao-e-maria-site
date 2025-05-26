@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>João e Maria Bolos, Doces e Cia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="joaoemaria.css" />
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#encomendas">Encomendas</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Página Inicial -->
+    <section id="home">
+        <div class="banner">
+            <h1>Bem-vindo à João & Maria Bolos, Doces e Cia</h1>
+            <p>Feito com carinho para você</p>
+            <a href="#encomendas" class="cta-button">Peça Agora</a>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <h2>Nossa História</h2>
+        <div class="bonecos">
+            <img src="JOAO.png" alt="João" class="boneco" />
+            <img src="MARIA.png" alt="Maria" class="boneco" />
+        </div>
+        <p>
+            A João e Maria Bolos, Doces e Cia nasceu da paixão por fazer doces deliciosos e bolos personalizados para todas as ocasiões.<br />
+            Com receitas que passam de geração em geração, garantimos o melhor sabor e carinho em cada pedacinho!
+        </p>
+    </section>
+
+    <!-- Cardápio -->
+    <section id="cardapio">
+        <h2>Nosso Cardápio</h2>
+        <div class="produtos">
+            <div class="produto">
+                <h3>Bolo de Chocolate</h3>
+                <p>Delicioso bolo recheado com ganache de chocolate.</p>
+            </div>
+            <div class="produto">
+                <h3>Doces Sortidos</h3>
+                <p>Bolinhos, brigadeiros e outros docinhos para complementar a sua festa.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encomendas -->
+    <section id="encomendas">
+        <h2>Encomendas</h2>
+        <p>
+            Antes de fazer sua encomenda, entre em contato conosco para verificar a disponibilidade e detalhes da entrega. Clique abaixo para saber mais!
+        </p>
+        <a href="#" class="cta-button" id="btn-whats" style="pointer-events: none; opacity: 0.5;">Entre em Contato</a>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Entre em contato pelo WhatsApp ou por e-mail para mais informações.</p>
+        <a href="#" class="cta-button" id="btn-email" style="pointer-events: none; opacity: 0.5;">Enviar Email</a>
+    </section>
+
+    <!-- Botão para desbloquear e notificar -->
+    <section style="text-align: center; margin: 30px auto;">
+        <button onclick="desbloquearContatos()" style="background-color: #6E47D1; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+            Clique aqui para desbloquear os contatos
+        </button>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2025 João e Maria Bolos, Doces e Cia - Todos os direitos reservados.</p>
+        <a href="https://www.instagram.com/jem_bolos_doces_e_cia/" target="_blank" class="instagram-link" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; margin-top: 10px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" style="width: 24px; height: 24px;" />
+            <span style="color: #6E47D1;">Siga no Instagram</span>
+        </a>
+    </footer>
+
+    <!-- Botão flutuante -->
+    <a href="#" class="indicador-contato" style="pointer-events: none; opacity: 0.5;">
+        <img src="bolo.png" alt="Ícone de Bolo" class="icone-bolo" />
+        <span>Entre em contato</span>
+        <div class="seta"></div>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        function desbloquearContatos() {
+            // Libera os links
+            document.getElementById("btn-whats").href =
+                "https://wa.me/5511982331242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda%21";
+            document.getElementById("btn-whats").style.pointerEvents = "auto";
+            document.getElementById("btn-whats").style.opacity = "1";
+
+            document.getElementById("btn-email").href =
+                "https://mail.google.com/mail/?view=cm&fs=1&to=joaoemariabolosdocesecia@gmail.com&su=Encomenda&body=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda!";
+            document.getElementById("btn-email").style.pointerEvents = "auto";
+            document.getElementById("btn-email").style.opacity = "1";
+
+            document.querySelector(".indicador-contato").href =
+                "https://wa.me/5511982331242?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20fazer%20uma%20encomenda%21";
+            document.querySelector(".indicador-contato").style.pointerEvents = "auto";
+            document.querySelector(".indicador-contato").style.opacity = "1";
+
+            // Notificar via Google Sheets (substitua SEU_SCRIPT_ID pelo real)
+            fetch("https://script.google.com/macros/s/AKfycbyy6zqHvYMe3LAoz0dldc1uobpr1MTGGltiGPT7Moy5qmPuRhnWN-VKkbtTaszhj0_uWg/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    origem: "João e Maria - Contato desbloqueado",
+                    data: new Date().toLocaleString(),
+                }),
+            });
+
+            alert("Contatos desbloqueados com sucesso!");
+        }
+    </script>
+</body>
+</html>
